@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>七夕快乐</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="pageA.css">
+    <script src="jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.transit.js"></script>
+    <style type="text/css">
+    	/* 人物暂停 */
+        .pauseWalk {
+            -webkit-animation-play-state: paused;
+            -moz-animation-play-state: paused;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='content'>
+        <ul class='content-wrap'>
+            <!-- 第一副画面 -->
+            <li>
+            	<div class="a_background">
+            		<div class="a_background_top"></div>
+            		<div class="a_background_middle"></div>
+            		<div class="a_background_bottom"></div>
+            	</div>
+            </li>
+            <!-- 第二副画面 -->
+            <li> 页面2 </li>
+            <!-- 第三副画面 -->
+            <li> 页面3 </li>
+        </ul>
+        <div id="boy" class="charector"></div>
+    </div>
+    <div class="button">
+        <button>点击开始动画</button>
+        <button>暂停</button> 
+    </div>
+    <script type="text/javascript" src="Swipe.js"></script>
+    <script type="text/javascript" src="Qixi.js"></script>
+    <script type="text/javascript">
+        // 增加精灵动画
+        // $('button').click(function() {
+        // 	// 增加走路decss3关键帧规则
+        // 	$boy.transition({
+        // 		'left': $("#content").width() + 'px',
+        // 	}, 10000, 'linear', function() {});
+        // });
+
+        // 开始
+        $("button:first").click(function() {
+         	// 10秒钟，走到0.5 也就是页面打中间的位置
+         	var distX = calculateDist('x', 0.5);
+         	var distY = calculateDist('y', 0.5);
+         	alert(distX + ", " + distY);
+         	walkRun(10000, distX, distY);
+        });
+
+        // 暂停
+        $('button:last').click(function() {
+        	var left = $boy.css('left');
+        	// 强制做了一个改变目标left的处理
+        	// 动画是要运行10秒，所以此时动画还是没有结束的
+        	$boy.css('left', left);
+        	// 增加暂停的样式
+        	$boy.addClass('pauseWalk');
+        });
+    </script>
+</body>
+
+</html>
