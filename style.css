@@ -81,6 +81,17 @@ button {
     -moz-animation-iteration-count: infinite;
     -moz-animation-timing-function: steps(1, start);
 }
+
+.slowFlowerWalk {
+       -webkit-animation-name: person-flower-slow;
+       -webkit-animation-duration: 950ms;
+       -webkit-animation-iteration-count: infinite;
+       -webkit-animation-timing-function: step-start;
+       -moz-animation-name: person-flower-slow;
+       -moz-animation-duration: 950ms;
+       -moz-animation-iteration-count: infinite;
+       -moz-animation-timing-function: step-start;
+   }
     	
 /* 普通慢走 */
 @-webkit-keyframes person-slow {
@@ -88,7 +99,7 @@ button {
 		background-position: -0px -291px; 
 	}
 	25% {
-		background-position: -602px -0px;
+		background-position: -604px -0px;
 	}
 	50% {
 		background-position: -302px -291px;
@@ -106,7 +117,7 @@ button {
         background-position: -0px -291px;
     }
     25% {
-    	background-position: -602px -0px;
+    	background-position: -604px -0px;
     }
     50% {
         background-position: -302px -291px;
@@ -117,4 +128,47 @@ button {
     100% {
       	background-position: -0px -291px;
     }
+}
+
+/* 带花慢走 */
+@-webkit-keyframes person-flower-slow {
+    0% {
+        background-position: -453px -0px;
+    }
+    25% {
+        background-position: -906px -0px;
+    }
+    50% {
+        background-position: -453px -0px;
+    }
+    75% {
+        background-position: -755px -0px;
+    }
+    100% {
+        background-position: -302px -0px;
+    }
+}
+
+ @-moz-keyframes person-flower-slow {
+    0% {
+        background-position: -453px -0px;
+    }
+    25% {
+        background-position: -906px -0px;
+    }
+    50% {
+        background-position: -453px -0px;
+    }
+    75% {
+        background-position: -755px -0px;
+    }
+    100% {
+        background-position: -302px -0px;
+    }
+}
+
+/* 人物暂停 */
+.pauseWalk {
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
 }
